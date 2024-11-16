@@ -1,0 +1,30 @@
+<%= content_tag :div, class: 'table-responsive table-loading' do %>
+  <div id='user-table-loading-message' class="table-loading-message" style="display: none">
+    <%= _('Cargando') %>...
+  </div>
+  <table class="table table-row-bordered gy-5">
+    <thead>
+    <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+      <th class="w-10px pe-2" rowspan="1" colspan="1" aria-label="" style="width: 29.25px;">
+        <%= sort_link(query, :name, _('Nombre')) %>
+      </th>
+      <th class="min-w-125px" style="width: 207.25px;">
+        <%= sort_link(query, :created_at, _('Fecha de registo')) %>
+      </th>
+      <th class="text-end min-w-100px" style="width: 129.094px;">
+        <%= _('Acciones') %>
+      </th>
+    </tr>
+    </thead>
+
+    <%= content_tag :tbody, id: 'product_index_table_row', class: 'text-gray-600 fw-bold' do %>
+      <% if products.any? %>
+        <%= render partial: 'admin/products/index/row', collection: products, as: :product %>
+      <% else %>
+        <tr class="text-center">
+          <td colspan="5"><%= _('No hay productos') %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+<% end %>

@@ -1,0 +1,14 @@
+<% unless @header_label.nil? %>
+  <%= render LabelComponent.new(form: @form,
+                                attribute: @attribute,
+                                label: @header_label,
+                                required: @required) %>
+<% end %>
+
+<% @collection.each_with_index do |radio_button, index| %>
+  <%= render RadioButtonComponent.new(form: @form,
+                                      attribute: @attribute,
+                                      label: radio_button.send(@label_attribute),
+                                      value: radio_button.send(@value_attribute)) %>
+  <%= content_tag :div, nil, class: separator_classes unless index == @collection.size - 1 %>
+<% end %>

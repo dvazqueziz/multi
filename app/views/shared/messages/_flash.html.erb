@@ -1,0 +1,15 @@
+<% if flash.any? %>
+  <div class="w-lg-500px">
+    <% flash.each do |type, message| %>
+      <div class="alert <%= bootstrap_class_for(type) %> d-flex align-items-center p-5 mb-10" role='alert'>
+        <i class='<%= bootstrap_class_for(type, :icon) + ' ' + bootstrap_class_for(type, :text) %> fs-2x me-4'></i>
+        <div class="d-flex flex-column">
+          <span><%= message %></span>
+        </div>
+        <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
+          <i class="bi bi-x-lg <%= bootstrap_class_for(type, :text) %> fs-1"></i>
+        </button>
+      </div>
+    <% end %>
+  </div>
+<% end %>

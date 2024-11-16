@@ -1,0 +1,38 @@
+<div data-controller="components--swapper"
+     data-kt-swapper-mode="prepend"
+     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+  <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">
+    <% if @title %>
+      <%= @title %>
+    <% else %>
+      <%= @breadcrumb_items.any? ? @breadcrumb_items.last[:title] : "" %>
+    <% end %>
+    <% if @description %>
+      <span class="text-muted fs-7 fw-bold mt-2"><%= @description %></span>
+    <% end %>
+  </h1>
+
+  <% if @breadcrumb_items.size > 1 %>
+    <% if @separator %>
+      <span class="h-20px border-gray-300 border-start mx-4"></span>
+    <% end %>
+
+    <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+      <% @breadcrumb_items.each do |breadcrumb_item| %>
+
+        <% if breadcrumb_item == @breadcrumb_items.last %>
+          <li class="breadcrumb-item text-dark"><%= breadcrumb_item[:title] %></li>
+        <% else %>
+          <%= content_tag :li, class: 'breadcrumb-item text-muted' do %>
+            <%= link_to breadcrumb_item[:title], @path, class: 'text-hover-primary text-muted' %>
+          <% end %>
+
+          <li class="breadcrumb-item">
+            <span class="bullet bg-gray-300 w-5px h-2px"></span>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

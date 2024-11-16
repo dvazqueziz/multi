@@ -1,0 +1,19 @@
+<% if sub_items.present? %>
+  <%= content_tag :div, arguments do %>
+    <span class='menu-link'>
+			<%= render @body %>
+      <span class='menu-arrow'></span>
+	</span>
+    <div class='<%= sub_item_classes %>'>
+      <% sub_items.each do |sub_item| %>
+        <%= sub_item %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <%= content_tag :div, class: 'menu-item' do %>
+    <%= link_to @to, arguments do %>
+      <%= render @body %>
+    <% end %>
+  <% end %>
+<% end %>

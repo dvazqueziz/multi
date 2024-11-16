@@ -1,0 +1,10 @@
+<%= turbo_frame_tag :flash_container do %>
+  <% controller = 'flash' %>
+  <% flash.each do |type, message| %>
+    <%= content_tag :div,
+                    data: { controller: controller,
+                            "#{controller}-type": type,
+                            "#{controller}-message": message } do %>
+    <% end %>
+  <% end %>
+<% end %>

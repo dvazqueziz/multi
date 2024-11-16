@@ -1,0 +1,23 @@
+<div id="kt_content_container" class="container-xxl">
+    <div class="card">
+      <div class="card-header border-0 pt-6">
+  
+        <div class="card-title">
+          <%= render partial: 'admin/products/index/filters', locals: { query: @query } %>
+        </div>
+  
+        <div class="card-toolbar">
+          <%#= render partial: 'admin/users/index/toolbar' %>
+        </div>
+      </div>
+      <div class="card-body py-4">
+        <%= turbo_frame_tag 'products' do %>
+          <%= render partial: 'admin/products/index/table', locals: { products: @products, query: @query } %>
+          <%= render PaginationComponent.new(pagy: @pagy, pagination_class: 'justify-content-end', link_extra: 'data-turbo-action="advance"') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  
+  

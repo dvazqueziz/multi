@@ -1,0 +1,7 @@
+app:
+  name: 'Softwhisper'
+  logo_filename_path: '/softwhisper_logo.png'
+  icon_filename_path: '/softwhisper_icon.png'
+
+locale:
+  default: :es

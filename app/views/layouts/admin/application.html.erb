@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>BackendTemplateRails7</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "plugins.bundle", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "style.bundle", "data-turbo-track": "reload" %>
+
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+
+<body id="kt_body" class="page-loading-enabled page-loading header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed"
+      style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px"
+      data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on"
+      data-controller='components--app'>
+
+<div class="d-flex flex-column flex-root">
+  <div class="page d-flex flex-row flex-column-fluid">
+
+    <%= render partial: 'layouts/admin/aside' %>
+
+    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+
+      <%= render partial: 'layouts/admin/header' %>
+
+      <%= render partial: "shared/messages/toast", flash: flash %>
+
+      <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+        <%= render partial: 'layouts/admin/toolbar' %>
+
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+          <%= yield %>
+        </div>
+      </div>
+
+      <%= render partial: 'layouts/admin/footer' %>
+
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'layouts/admin/scroll_top' %>
+
+<%= turbo_frame_tag :modal, target: "_top" %>
+<%= turbo_frame_tag :drawer, target: "_top" %>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+<%= turbo_stream.update "user_form_errors" do %>
+  <%= render "shared/form/errors", form_id: 'user-form', model: :user, errors: @errors %>
+<% end %>

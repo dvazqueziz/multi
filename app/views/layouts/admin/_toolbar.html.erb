@@ -1,0 +1,5 @@
+<%= content_tag :div, class: 'toolbar', id: 'kt_toolbar' do %>
+  <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+    <%= render BreadcrumbComponent.new(separator: true, breadcrumb_items: @breadcrumbs) %>
+  </div>
+<% end %>

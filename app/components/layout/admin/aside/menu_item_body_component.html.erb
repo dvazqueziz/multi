@@ -1,0 +1,16 @@
+<% if @has_bullet %>
+	<span class="menu-bullet">
+				<span class="bullet bullet-dot"></span>
+			</span>
+<% end %>
+<% if @icon %>
+	<span class='menu-icon'>
+				<%= render ::KTSVGComponent.new(path: @icon, class_name: 'svg-icon-2') %>
+			</span>
+<% end %>
+<% if @font_icon %>
+	<span class="menu-icon">
+					<i class="bi fs-3 <%= @font_icon %>"></i>
+				</span>
+<% end %>
+<span class='menu-title'><%= @title %></span>

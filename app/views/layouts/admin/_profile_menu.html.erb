@@ -1,0 +1,36 @@
+<div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+  <div class="symbol-label fs-3 bg-light-danger text-danger">
+    <%= current_user.name[0] %><%= current_user.surname[0] if current_user.surname %>
+  </div>
+</div>
+
+<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-controller="components--menu">
+  <div class="menu-item px-3">
+    <div class="menu-content d-flex align-items-center px-3">
+
+      <div class="symbol symbol-50px symbol-md-50px me-5 ">
+        <div class="symbol-label fs-3 bg-light-danger text-danger">
+          <%= current_user.name[0] %><%= current_user.surname[0] if current_user.surname %>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column">
+        <div class="fw-bolder d-flex align-items-center fs-5"><%= current_user.full_name %></div>
+        <%= link_to current_user.email, admin_user_path(current_user), class: 'fw-bold text-muted text-hover-primary fs-7' %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="separator my-2"></div>
+
+  <div class="menu-item px-5">
+    <%= link_to _('Mi perfil'), admin_user_path(current_user), class: 'menu-link px-5' %>
+  </div>
+
+  <div class="separator my-2"></div>
+  <div class="menu-item px-5">
+    <%= button_to _('Cerrar sesión'), destroy_user_session_path, method: :delete, data: { turbo: :false }, class: 'btn menu-link px-5', style: 'width: 100%' %>
+  </div>
+
+</div>

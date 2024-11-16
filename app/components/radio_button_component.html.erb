@@ -1,0 +1,9 @@
+<div class="form-check form-check-custom form-check-solid">
+  <%= radio_button %>
+  <% if @label || @description %>
+    <%= render LabelComponent.new(label_options: { class: 'form-check-label' }) do %>
+      <%= content_tag :div, @label, class: 'fw-bolder text-gray-800' unless @label.nil? %>
+      <%= content_tag :div, @description, class: 'text-gray-600' unless @description.nil? %>
+    <% end %>
+  <% end %>
+</div>

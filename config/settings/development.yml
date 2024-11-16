@@ -1,0 +1,19 @@
+app:
+  domain: 'localhost:3000'
+
+
+locale:
+  default: :es
+
+mail:
+  default_url_options:
+    host: localhost
+    port: 3000
+  delivery_method: :letter_opener
+  from: noreply@example.com
+  smtp:
+    port: 587
+    address: smtp.mailgun.org
+    domain: DOMAIN.mailgun.org
+    user_name: postmaster@DOMAIN.mailgun.org
+    authentication: plain

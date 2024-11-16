@@ -1,0 +1,8 @@
+<% if @label %>
+  <%= render LabelComponent.new(form: @form, attribute: @attribute, label: @label, required: @required, label_options: @label_options) %>
+<% end %>
+<% if @form.present? && @attribute.present? %>
+  <%= @form.public_send(input, @attribute, input_options) %>
+<% else %>
+  <%= public_send(input_tag, @name, @value, input_options) %>
+<% end %>

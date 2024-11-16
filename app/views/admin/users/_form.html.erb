@@ -1,0 +1,63 @@
+<% submit_text = form.persisted? ? _('Actualizar') : _('Crear') %>
+<%= turbo_frame_tag :user_form_errors %>
+<%= form_with(model: [:admin, form], id: 'user-form', class: 'form fv-plugins-bootstrap5 fv-plugins-framework') do |f| %>
+  <div class="d-flex flex-column scroll-y me-n7 pe-7"
+       id="kt_modal_add_user_scroll"
+       data-controller="components--scroll"
+       data-kt-scroll-activate="{default: false, lg: true}"
+       data-kt-scroll-max-height="auto"
+       data-kt-scroll-dependencies="#kt_modal_add_user_header"
+       data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
+       data-kt-scroll-offset="300px" style="max-height: 376px;">
+
+    <div class="fv-row mb-7">
+      <%= render TextFieldComponent.new(form: f,
+                                        attribute: :name,
+                                        label: _('Nombre'),
+                                        placeholder: _('Nombre'),
+                                        required: true,
+                                        input_options: { class: 'form-control-solid mb-3 mb-lg-0' }) %>
+    </div>
+
+    <div class="fv-row mb-7">
+      <%= render TextFieldComponent.new(form: f,
+                                        attribute: :surname,
+                                        label: _('Apellidos'),
+                                        placeholder: _('Apellidos'),
+                                        required: true,
+                                        input_options: { class: 'form-control-solid mb-3 mb-lg-0' }) %>
+    </div>
+
+    <div class="fv-row mb-7">
+      <%= render TextFieldComponent.new(form: f,
+                                        type: :email,
+                                        attribute: :email,
+                                        label: _('Email'),
+                                        placeholder: _('Email'),
+                                        required: true,
+                                        input_options: { autocomplete: false, class: 'form-control-solid mb-3 mb-lg-0' }) %>
+    </div>
+
+    <div class="fv-row mb-7">
+      <%= render RadioButtonGroupComponent.new(form: f,
+                                               collection: form.role_options,
+                                               attribute: :role_id,
+                                               header_label: _('Rol'),
+                                               value_attribute: :id,
+                                               label_attribute: :full_name,
+                                               required: true,
+                                               separator: true) %>
+    </div>
+
+  </div>
+  <div class="text-center pt-15">
+    <%= button_tag _('Descartar'), type: 'reset', class: 'btn btn-light me-3', data: { action: 'components--base--turbo-modal#hide' } %>
+    <%= button_tag type: 'submit', id: 'kt_sign_up_submit', class: 'btn btn-lg btn-primary fw-bolder me-4' do %>
+      <%= content_tag :span, submit_text, class: 'indicator-label' %>
+      <%= content_tag :span, nil, class: 'indicator-progress' do %>
+        <%= _('Por favor espere...') %>
+        <%= content_tag :span, nil, class: 'spinner-border spinner-border-sm align-middle ms-2' %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

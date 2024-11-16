@@ -1,0 +1,16 @@
+<% if errors.any? %>
+  <% controller = 'utils--forms--errors' %>
+  <%= content_tag :div, class: 'd-none', data: { controller: controller,
+                                                 "#{controller}-form-id-value": form_id,
+                                                 "#{controller}-model-value": model } do %>
+    <% errors.each do |attribute, messages| %>
+      <%= content_tag :div, data: { "#{controller}-target": attribute,
+                                    "#{controller}-humanize-target": attribute.to_s.humanize } do %>
+        <%- messages.each do |message| %>
+            <%= message.capitalize %>
+        <%- end %>
+      <% end %>
+
+    <% end %>
+  <% end %>
+<% end %>

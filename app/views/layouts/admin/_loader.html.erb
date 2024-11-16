@@ -1,0 +1,7 @@
+<div class="page-loader flex-column">
+  <%= image_tag(Settings.app.logo_filename_path, class: 'mh-35px mh-lg-75px mh-md-65px mh-sm-55px', alt: 'Logo') %>
+  <div class="d-flex align-items-center mt-5">
+    <span class="spinner-border text-primary" role="status"></span>
+    <span class="text-muted fs-6 fw-bold ms-5"><%= _('Cargando') %>...</span>
+  </div>
+</div>

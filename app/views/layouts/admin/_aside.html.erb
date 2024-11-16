@@ -1,0 +1,6 @@
+<%= render ::Layout::Admin::AsideComponent.new do |aside| %>
+
+  <% aside.menu_item(to: admin_root_path, title: _('Dashboard'), font_icon: 'bi bi-speedometer2') %>
+  <% aside.menu_item(to: admin_users_path, title: _('Usuarios'), description: _('Listado de usuarios'), font_icon: 'bi bi-people') if current_user.has_role?(:admin) %>
+  <% aside.menu_item(to: admin_products_path, title: _('Productos'), font_icon: 'bi bi-shop-window') %>
+<% end %>

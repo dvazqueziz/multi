@@ -1,0 +1,88 @@
+# Spanish translations for app package.
+# Copyright (C) 2022 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-09 14:41+0100\n"
+"PO-Revision-Date: 2022-02-09 14:41+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=; plural=;\n"
+"\n"
+
+msgid "Acepto los"
+msgstr ""
+
+msgid "Apellidos"
+msgstr ""
+
+msgid "Contraseña"
+msgstr ""
+
+msgid "Correo electrónico"
+msgstr ""
+
+msgid "Enviar"
+msgstr ""
+
+msgid "Ingresa tu correo eletrónico y te enviaremos las instrucciones para cambiar la contraseña."
+msgstr ""
+
+msgid "Ingresa tu correo eletrónico y te reenviaremos las instrucciones de confirmación."
+msgstr ""
+
+msgid "Iniciar sesión"
+msgstr ""
+
+msgid "No hay usuarios"
+msgstr ""
+
+msgid "No recibí las intrucciones de confirmación"
+msgstr ""
+
+msgid "Nombre"
+msgstr ""
+
+msgid "Recuérdame"
+msgstr ""
+
+msgid "Reenviar"
+msgstr ""
+
+msgid "Reenviar instrucciones de confirmación"
+msgstr ""
+
+msgid "Registrarse"
+msgstr ""
+
+msgid "Usuarios"
+msgstr ""
+
+msgid "o"
+msgstr ""
+
+msgid "políticas de privacidad"
+msgstr ""
+
+msgid "términos"
+msgstr ""
+
+msgid "y"
+msgstr ""
+
+msgid "¿Olvidaste tu contraseña?"
+msgstr ""
+
+msgid "¿Olvidate tu contraseña?"
+msgstr ""
+
+msgid "¿Tienes una cuenta?"
+msgstr ""
